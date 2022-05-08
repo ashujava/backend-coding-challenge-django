@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "01bc9ce9-7513-45df-b8fa-edded5978965",
+		"name": "Thermondo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test2\",\n    \"password\": \"A@123456\",\n    \"password2\": \"A@123456\",\n    \"email\": \"test1@gmail.com\",\n    \"first_name\": \"test1\",\n    \"last_name\": \"test1\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test1\",\n    \"password\": \"A@123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY1MjYyNjIyNiwiaWF0IjoxNjUyMDIxNDI2LCJqdGkiOiJmOTg1MmFiMzMzMmY0Y2NlOGM0MWRhOGJiMDVhNzc2MyIsInVzZXJfaWQiOjR9.Sh6ZeOqRL5mw52oZidp3lYhn3fLw1LMq1Bp-3YStgIU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Note",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMDk5NzM5LCJpYXQiOjE2NTIwMTMzMzksImp0aSI6ImIwODI0MzU4Y2FiNzQ0NTY5MjYwMjcyMDdiMzI1NGU3IiwidXNlcl9pZCI6MX0.l0RX1cs4A8FSUrfmjzz-3au3RDnCH6jeJT7rEYVGseI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Python developer\",\n    \"body\": \"This is my first Django application\",\n    \"tags\": \"ashu\",\n    \"is_public\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/note",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMDk5NzM5LCJpYXQiOjE2NTIwMTMzMzksImp0aSI6ImIwODI0MzU4Y2FiNzQ0NTY5MjYwMjcyMDdiMzI1NGU3IiwidXNlcl9pZCI6MX0.l0RX1cs4A8FSUrfmjzz-3au3RDnCH6jeJT7rEYVGseI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Public Ashu\",\n    \"body\": \"This is my first Ashu\",\n    \"tags\": \"ashu\",\n    \"is_public\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/note/9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"note",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMDk5NzM5LCJpYXQiOjE2NTIwMTMzMzksImp0aSI6ImIwODI0MzU4Y2FiNzQ0NTY5MjYwMjcyMDdiMzI1NGU3IiwidXNlcl9pZCI6MX0.l0RX1cs4A8FSUrfmjzz-3au3RDnCH6jeJT7rEYVGseI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Python developer\",\n    \"body\": \"This is my first Django application\",\n    \"tags\": \"ashu\",\n    \"is_public\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/note",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Notes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMDk5NzM5LCJpYXQiOjE2NTIwMTMzMzksImp0aSI6ImIwODI0MzU4Y2FiNzQ0NTY5MjYwMjcyMDdiMzI1NGU3IiwidXNlcl9pZCI6MX0.l0RX1cs4A8FSUrfmjzz-3au3RDnCH6jeJT7rEYVGseI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Public Ashu\",\n    \"body\": \"This is my first Ashu\",\n    \"tags\": \"ashu\",\n    \"is_public\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/filternotes/ashu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"filternotes",
+						"ashu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Notes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMDk5NzM5LCJpYXQiOjE2NTIwMTMzMzksImp0aSI6ImIwODI0MzU4Y2FiNzQ0NTY5MjYwMjcyMDdiMzI1NGU3IiwidXNlcl9pZCI6MX0.l0RX1cs4A8FSUrfmjzz-3au3RDnCH6jeJT7rEYVGseI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Public Ashu\",\n    \"body\": \"This is my first Ashu\",\n    \"tags\": \"ashu\",\n    \"is_public\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/searchnotes/ashu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"searchnotes",
+						"ashu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Public Notes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMDk5NzM5LCJpYXQiOjE2NTIwMTMzMzksImp0aSI6ImIwODI0MzU4Y2FiNzQ0NTY5MjYwMjcyMDdiMzI1NGU3IiwidXNlcl9pZCI6MX0.l0RX1cs4A8FSUrfmjzz-3au3RDnCH6jeJT7rEYVGseI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Public Ashu\",\n    \"body\": \"This is my first Ashu\",\n    \"tags\": \"ashu\",\n    \"is_public\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/listnotes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"listnotes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
