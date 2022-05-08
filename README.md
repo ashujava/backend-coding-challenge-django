@@ -26,10 +26,10 @@ Backend REST API for a simple note-taking app.
 * cd to root folder and run following commands
 * sudo pip3 install virtualenv
 * virtualenv venv
-* pip install requirements.txt
-* python manage.py makemigration
-* python manage.py migrate
-* run command : python manage.py runserver
+* pip3 install -r requirements.txt
+* python3 manage.py makemigration
+* python3 manage.py migrate
+* python manage.py runserver
 
 ### Access APIs
 * The following application can be access via postman. Collection present at root location as Thermondo.postman_collection.json 
